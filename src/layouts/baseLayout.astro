@@ -1,0 +1,36 @@
+---
+const { title = "Actor Portfolio" } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{title}</title>
+  </head>
+  <body class="bg-gray-100 text-gray-900 min-h-screen flex flex-col">
+    <!-- Navbar -->
+    <header class="bg-white shadow">
+      <nav class="max-w-5xl mx-auto px-4 py-4 flex justify-between items-center">
+        <a href="/" class="text-xl font-bold">Actor Name</a>
+        <div class="flex gap-6">
+          <a href="/" class="hover:text-blue-600">Home</a>
+          <a href="/about" class="hover:text-blue-600">About</a>
+          <a href="/contact" class="hover:text-blue-600">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main content -->
+    <main class="flex-1 max-w-5xl mx-auto px-4 py-8">
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t">
+      <div class="max-w-5xl mx-auto px-4 py-6 text-sm text-gray-500">
+        © {new Date().getFullYear()} Actor Name
+      </div>
+    </footer>
+  </body>
+</html>

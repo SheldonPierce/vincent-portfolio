@@ -1,0 +1,36 @@
+---
+/* No props needed, but we can add them later if you want */
+---
+
+<!-- Vanta canvas -->
+<div id="vanta-bg" class="fixed inset-0 -z-20 pointer-events-none"></div>
+
+<!-- Gradient fade overlay (matches orange → blue) -->
+<div
+  class="fixed inset-0 -z-10 pointer-events-none
+         bg-[linear-gradient(to_bottom,rgba(249,115,22,1)_0px,rgba(249,115,22,0)_160px,rgba(30,64,175,0)_calc(100%-160px),rgba(30,64,175,1)_100%)]">
+</div>
+
+<!-- Scripts -->
+<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script is:inline src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.fog.min.js"></script>
+
+<script is:inline>
+  window.addEventListener("load", () => {
+    if (window.VANTA && !window.__vantaFog) {
+      window.__vantaFog = window.VANTA.FOG({
+        el: "#vanta-bg",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.0,
+        minWidth: 200.0,
+        highlightColor: 0xfc9b62,
+        midtoneColor: 0x1a00ff,
+        blurFactor: 0.6,
+        speed: 0.45,
+        zoom: 1.05
+      });
+    }
+  });
+</script>
